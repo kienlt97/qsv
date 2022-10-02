@@ -13,7 +13,7 @@ pipeline{
         stage('Build Image Docker'){
                     steps{
                         withDockerRegistry(credentialsId: 'docker-hub', url: 'http://192.168.40.104:5000') {
-                            sh 'docker build -t 192.168.40.104:5000/qsv .'
+                            sh 'docker build -t 192.168.40.104:5000/qsv:v1 .'
                             sh 'docker push 192.168.40.104:5000/qsv'
                         }
                     }
